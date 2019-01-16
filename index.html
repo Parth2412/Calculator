@@ -9,44 +9,61 @@
     <title>Calculator</title>
 
     <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<main>
     
     <div class="calc">
         
         <!--First Row-->
         <div class="calcDisplay">
-            <button class="calcCleaner"></button>
+            <button class="calcCleaner" data-value="C">
+                <img src="D:\Projects\JavaScript Project\Calculator\c.png" alt="C"/>
+            </button>
             <div class="calcResult" id="resultBlock"></div>
             <div class="calcHistory" id=historyBlock></div>
         </div>
 
         <!--Second Row-->
+        <button class="calcButton calcAction" data-value="ac">AC</button>
+        <button class="calcButton calcAction" data-value="c">C</button>
+        <button class="calcButton calcAction" data-value="xⁿ">xⁿ</button>
+        <button class="calcButton calcAction" data-value="=">=</button>
+
+        <button class="calcButton calcAction" data-value="x³">x³</button>
+        <button class="calcButton calcAction" data-value="x²">x²</button>
+        <button class="calcButton calcAction" data-value="x!">x!</button>
+        <button class="calcButton calcAction" data-value="√x">√x</button>
+        
+        <!--Third Row-->
         <button class="calcButton" data-value="7">7</button>
         <button class="calcButton" data-value="8">8</button>
         <button class="calcButton" data-value="9">9</button>
-        <button class="calcButton calcAction" data-value="/">÷</button>
+        <button class="calcButton calcAction" data-value="+">+</button>
 
-        <!--Third Row-->
+        <!--Fourth Row-->
         <button class="calcButton" data-value="4">4</button>
         <button class="calcButton" data-value="5">5</button>
         <button class="calcButton" data-value="6">6</button>
-        <button class="calcButton calcAction" data-value="*">*</button>
+        <button class="calcButton calcAction" data-value="/">/</button>
 
-        <!--Fourth Row-->
+        <!--Fifth Row-->
         <button class="calcButton" data-value="1">1</button>
         <button class="calcButton" data-value="2">2</button>
         <button class="calcButton" data-value="3">3</button>
-        <button class="calcButton calcAction" data-value="-">-</button>
+        <button class="calcButton calcAction" data-value="*">*</button>
 
-        <!--Fifth Row-->
+        <!--Sixth Row-->
         <button class="calcButton" data-value="0">0</button>
         <button class="calcButton" data-value=".">.</button>
-        <button class="calcButton calcAction" data-value="=">=</button>
-        <button class="calcButton calcAction" data-value="+">+</button>
+        <button class="calcButton" data-value="00">00</button>
+        <button class="calcButton calcAction" data-value="-">-</button>
+
+        <!--Seventh Row-->
+        
 
     </div>
 
-</body>
+</main>
 </html>
