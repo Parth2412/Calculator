@@ -8,7 +8,7 @@
     
     <title>Calculator</title>
 
-    <script type="text/javascript" src="main.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,52 +18,47 @@
         
         <!--First Row-->
         <div class="calcDisplay">
-            <button class="calcCleaner" data-value="C">
-                <img src="D:\Projects\JavaScript Project\Calculator\c.png" alt="C"/>
-            </button>
             <div class="calcResult" id="resultBlock"></div>
             <div class="calcHistory" id=historyBlock></div>
         </div>
 
         <!--Second Row-->
-        <button class="calcButton calcAction" data-value="ac">AC</button>
-        <button class="calcButton calcAction" data-value="c">C</button>
-        <button class="calcButton calcAction" data-value="xⁿ">xⁿ</button>
-        <button class="calcButton calcAction" data-value="=">=</button>
+        <button class="calcButton calcAction" data-value="ac" id="btn-all-clear" onclick="allClear()"> AC </button>
+        <button class="calcButton calcAction" data-value="c" id="btn-single-digit-clear" onclick="deleteSingleDigit()">C </button>
+        <button class="calcButton calcAction" data-value="xⁿ" id="btn-exponential"> xⁿ </button>
+        <button class="calcButton calcAction" data-value="=" id="btn-equals-to"> = </button>
 
-        <button class="calcButton calcAction" data-value="x³">x³</button>
-        <button class="calcButton calcAction" data-value="x²">x²</button>
-        <button class="calcButton calcAction" data-value="x!">x!</button>
-        <button class="calcButton calcAction" data-value="√x">√x</button>
-        
         <!--Third Row-->
-        <button class="calcButton" data-value="7">7</button>
-        <button class="calcButton" data-value="8">8</button>
-        <button class="calcButton" data-value="9">9</button>
-        <button class="calcButton calcAction" data-value="+">+</button>
-
+        <button class="calcButton calcAction" data-value="x³" id="btn-cube" onclick="countCube()"> x³ </button>
+        <button class="calcButton calcAction" data-value="x²" id="btn-square" onclick="countSquare()"> x² </button>
+        <button class="calcButton calcAction" data-value="x!" id="btn-factorial" onclick="countFactorial()"> x! </button>
+        <button class="calcButton calcAction" data-value="√x" id="btn-sqrt" onclick="countSqrt()"> √x </button>
+        
         <!--Fourth Row-->
-        <button class="calcButton" data-value="4">4</button>
-        <button class="calcButton" data-value="5">5</button>
-        <button class="calcButton" data-value="6">6</button>
-        <button class="calcButton calcAction" data-value="/">/</button>
+        <button class="calcButton" data-value="7" id="btn-seven" onclick="displayDigit('7')"> 7 </button>
+        <button class="calcButton" data-value="8" id="btn-eight" onclick="displayDigit('8')"> 8 </button>
+        <button class="calcButton" data-value="9" id="btn-nine" onclick="displayDigit('9')"> 9 </button>
+        <button class="calcButton calcAction" data-value="+" id="btn-plus"> + </button>
 
         <!--Fifth Row-->
-        <button class="calcButton" data-value="1">1</button>
-        <button class="calcButton" data-value="2">2</button>
-        <button class="calcButton" data-value="3">3</button>
-        <button class="calcButton calcAction" data-value="*">*</button>
+        <button class="calcButton" data-value="4" id="btn-four" onclick="displayDigit('4')"> 4 </button>
+        <button class="calcButton" data-value="5" id="btn-five" onclick="displayDigit('5')"> 5 </button>
+        <button class="calcButton" data-value="6" id="btn-six" onclick="displayDigit('6')"> 6 </button>
+        <button class="calcButton calcAction" data-value="/" id="btn-divide"> / </button>
 
         <!--Sixth Row-->
-        <button class="calcButton" data-value="0">0</button>
-        <button class="calcButton" data-value=".">.</button>
-        <button class="calcButton" data-value="00">00</button>
-        <button class="calcButton calcAction" data-value="-">-</button>
+        <button class="calcButton" value="1" id="btn-one" onclick="displayDigit('1')"> 1 </button>
+        <button class="calcButton" data-value="2" id="btn-two" onclick="displayDigit('2')"> 2 </button>
+        <button class="calcButton" data-value="3" id="btn-three" onclick="displayDigit('3')"> 3 </button>
+        <button class="calcButton calcAction" data-value="*" id="btn-multiply"> * </button>
 
         <!--Seventh Row-->
-        
+        <button class="calcButton" data-value="0" id="btn-zero" onclick="displayDigit('0')"> 0 </button>
+        <button class="calcButton" data-value="." id="btn-point" onclick="displayDigit('.')"> . </button>
+        <button class="calcButton" data-value="00" id="btn-doubleZero" onclick="displayDigit('00')"> 00 </button>
+        <button class="calcButton calcAction" data-value="-" id="btn-subtract">-</button>
 
     </div>
-
+<script type="text/javascript" src="main.js"></script>
 </main>
 </html>
