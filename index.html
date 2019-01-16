@@ -8,54 +8,7 @@
     
     <title>Calculator</title>
 
-    <script type="text/javascript">
-        
-        //Function of Display Number
-        function displayNumber(number){
-            calcForm.calcDisplay.value += number;
-        }
-
-        //Function of All Clear
-        function allClear(){
-            calcForm.calcDisplay.value = "";
-        }
-
-        //Function of Clear Single Digit
-        function deleteSingleDigit(){
-            var result = calcForm.calcDisplay.value;
-            calcForm.calcDisplay.value = result.substr(0,result.length - 1);
-        }
-
-        //Function of Clear Entire Number
-        function clearNumber(){
-            calcForm.calcDisplay.value = "";
-        }
-
-        //Function of Cube
-        function countCube(){
-            var result = Math.pow(calcForm.calcDisplay.value,3);
-            calcForm.calcDisplay.value = result;
-        }
-
-        //Function of Square
-        function countSquare(){
-            var result = Math.pow(calcForm.calcDisplay.value,2);
-            calcForm.calcDisplay.value = result;
-        }
-
-        //Function of Square root
-        function countSqrt(){
-            var result = Math.sqrt(calcForm.calcDisplay.value);
-            calcForm.calcDisplay.value = result;
-        }
-
-        //Function of Factorial
-        function countFactorial(){
-            var result = calcForm.calcDisplay.value;
-            
-        }
-
-    </script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
@@ -65,7 +18,7 @@
         <!--First Row-->
         <input type="button" name="btnCube" value="x³" onclick="countCube()">
         <input type="button" name="btnSquare" value="x²" onclick="countSquare()">
-        <input type="button" name="btnFactorial" value="x!">
+        <input type="button" name="btnFactorial" value="x!" onclick="countFactorial()">
         <input type="button" name="btnSquareRoot" value="√x" onclick="countSqrt()">
         <input type="button" name="btnExponential" value="xⁿ"><br>
 
@@ -73,29 +26,29 @@
         <input type="button" name="btn7" value="7" onclick="displayNumber('7')">
         <input type="button" name="btn8" value="8" onclick="displayNumber('8')">
         <input type="button" name="btn9" value="9" onclick="displayNumber('9')">
-        <input type="button" name="btnDivide" value="/">
+        <input type="button" name="btnDivide" value="/" onclick="displayOperator('/')">
         <input type="button" name="btnAllClear" value="AC" onclick="allClear()"><br>
 
         <!--Third Row-->
         <input type="button" name="btn4" value="4" onclick="displayNumber('4')">
         <input type="button" name="btn5" value="5" onclick="displayNumber('5')">
         <input type="button" name="btn6" value="6" onclick="displayNumber('6')">
-        <input type="button" name="btnMultiply" value="*">
+        <input type="button" name="btnMultiply" value="*" onclick="displayOperator('*')">
         <input type="button" name="btnSingleClear" value="<" onclick="deleteSingleDigit()"><br>
 
         <!--Fourth Row-->
         <input type="button" name="btn1" value="1" onclick="displayNumber('1')">
         <input type="button" name="btn2" value="2" onclick="displayNumber('2')">
         <input type="button" name="btn3" value="3" onclick="displayNumber('3')">
-        <input type="button" name="btnSubstract" value="-">
+        <input type="button" name="btnSubstract" value="-" onclick="displayOperator('-')">
         <input type="button" name="btnClearDigit" value="C" onclick="clearNumber()"><br>
 
         <!--Fifth Row-->
         <input type="button" name="btn00" value="00" onclick="displayNumber('00')">
         <input type="button" name="btn0" value="0" onclick="displayNumber('0')">
-        <input type="button" name="btnPoint" value=".">
-        <input type="button" name="btnPlus" value="+">
-        <input type="button" name="btnEqual" value="="><br>
+        <input type="button" name="btnPoint" value="." onclick="displayNumber('.')">
+        <input type="button" name="btnPlus" value="+" onclick="displayOperator('+')">
+        <input type="button" name="btnEqual" value="=" onclick="displayOperator('=')"><br>
 
     </form>
 </body>
