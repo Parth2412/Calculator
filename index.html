@@ -8,7 +8,6 @@
     
     <title>Calculator</title>
 
-    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -54,7 +53,7 @@
 
         <!--Seventh Row-->
         <button class="calcButton" data-value="0" id="btn-zero" onclick="displayDigit('0')"> 0 </button>
-        <button class="calcButton" data-value="." id="btn-point" onclick="displayDigit('.')"> . </button>
+        <button class="calcButton" data-value="." id="btn-point" onclick="displayDigit('.');checkDecimal();"> . </button>
         <button class="calcButton" data-value="00" id="btn-doubleZero" onclick="displayDigit('00')"> 00 </button>
         <button class="calcButton calcAction" data-value="-" id="btn-subtract">-</button>
 
