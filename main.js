@@ -1,8 +1,12 @@
-//Function of Displaying Numbers
+//Function of Displaying Numbers and checking length
 function displayDigit(number){
     console.log(number);
     var result = document.getElementById("resultBlock");
     result.textContent += number;
+    var len = result.textContent.length;
+    if(len > 10){
+        alert("Not more than 10 digit");
+    }
 }
 
 //Function of Count Cube
@@ -52,5 +56,16 @@ function deleteSingleDigit(){
     var beforeValue = document.getElementById("resultBlock").textContent;
     var result = beforeValue.substr(0,beforeValue.length - 1);
     document.getElementById("resultBlock").textContent = result;
+}
+
+//Function Check decimal exist or not
+function checkDecimal(){
+    var beforeValue = document.getElementById("resultBlock").textContent;
+    console.log(beforeValue);
+    if(!beforeValue.includes('.')){
+        beforeValue += '.';
+    }else{
+        document.getElementById("resultBlock").textContent = beforeValue;
+    }
 }
 
