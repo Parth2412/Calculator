@@ -3,11 +3,11 @@ body {
     height: 100%;
     padding: 0;
     margin: 0;
-    background: #658b92;
+    background:#144e5a;
     font-family: arial, sans-serif;
   }
   main {
-    margin-top: 40px;
+    margin-top: 90px;
     overflow: hidden;
     min-height: 600px;
     height: 100%;
@@ -33,7 +33,7 @@ body {
     left: 50px;
     width: 100%;
     height: 100px;
-    background: #61838a;
+    background: #144e5a;
     transform: skewX(45deg);
   }
   .calc:after {
@@ -42,13 +42,13 @@ body {
     top: 51px;
     width: 100px;
     height: 100%;
-    background: #61838a;
+    background: #144e5a;
     transform: skewY(45deg);
   }
   .calcDisplay {
     height: 140px;
     width: 100%;
-    background: #47565a;
+    background: #D5A458;
     color: #fff;
     text-align: right;
   }
@@ -78,7 +78,7 @@ body {
     background: transparent;
     padding: 0;
     outline: 0;
-    border: 0;
+    border: none;
     top: 45px;
     left: 20px;
     height: 20px;
@@ -88,10 +88,9 @@ body {
   }
   .calcButton {
     box-sizing: border-box;
-    background: #86b5bd;
-    border: 0;
-    border-right: 1px solid #6f9096;
-    border-bottom: 1px solid #6f9096;
+    background: #0F2043;
+    border: none;
+    color:#fff;
     padding: 0;
     margin: 0;
     display: inline-block;
@@ -99,15 +98,14 @@ body {
     height: 80px;
     font-size: 25px;
     cursor: pointer;
-    color: #fff;
-    box-shadow: inset -1px -1px 4px 0 rgba(255, 255, 255, 0.3);
     transition: all 0.1s;
   }
   .calcButton:nth-of-type(4n) {
-    border-right: 0;
+    border: none;
   }
   .calcButton:hover {
     box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    border: none;
   }
   .calcButton:focus {
     outline: 0;
@@ -117,5 +115,5 @@ body {
     box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
   }
   .calcAction {
-    background: #7dccda;
+    background:#79CEDC;
   }
