@@ -116,12 +116,24 @@ var i=0;
 //Functions for Calculation End
 
 
-//Functions for Navigation Start
+//Functions for Navigation Start and display History
 
-    //Function for Open Navigation Bar
+    //Function for Open Navigation Bar and show History
     function openNav() {
         document.getElementById("historyList").style.width = "250px";
-        
+        const historyList = document.getElementById("historyList");
+        while(historyList.children.length - 1){
+            historyList.removeChild(historyList.lastChild);
+        }
+        if(localStorage.length <= 10){
+            for(var hisLoop = 0 ; hisLoop <= localStorage.length - 1; hisLoop++){
+                var historyData = localStorage[hisLoop];
+                var showHistory = document.createElement('a');
+                showHistory.style.textAlign = "left";
+                showHistory.innerHTML = historyData;
+                historyList.appendChild(showHistory);
+            }
+        }
     }
     
     //Function for Close Navigation Bar
@@ -131,19 +143,4 @@ var i=0;
 
 //Functions for Navigation End
 
-//Functions for History Start
-
-const historyList = document.getElementById("historyList");
-var history2 = document.getElementById("btn-history");
-history2.addEventListener("click", function () {
-for(var j=0;j<10;j++){
-    var historyData = localStorage.getItem(j);
-    var result = document.createElement('a'); // is a node
-    result.innerHTML = historyData;
-    historyList.appendChild(result);
-    console.log(historyData);
-}
-}, false);
-
-//Functions for History End
   
