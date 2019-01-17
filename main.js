@@ -25,19 +25,6 @@ function countSquare(){
     display.textContent = result;
 }
 
-//Function of Count Factorial
-function countFactorial(){
-    var number = document.getElementById("resultBlock").innerHTML;
-    var fact,i;
-    fact = 1;
-    i = 1;
-    while(i <= number){
-        fact = fact * i;
-        i++;
-    }
-    document.getElementById("resultBlock").textContent = fact;
-}
-
 //Function of Count Square root
 function countSqrt(){
     var result = Math.sqrt(document.getElementById("resultBlock").textContent);
@@ -49,6 +36,7 @@ function allClear(){
     var result = document.getElementById("resultBlock").textContent;
     result = "";
     document.getElementById("resultBlock").textContent = result;
+    document.getElementById("historyBlock").textContent = result;
 }
 
 //Function of Delete single digit
@@ -69,10 +57,30 @@ function checkDecimal(){
     }
 }
 
-//Functions of Add, Mul, Div, Subtract
+//Functions of Add, Mul, Div, Subtract, Exponential
 function equalsTo(){
-    var data = document.getElementById("resultBlock").textContent;
-    var result = eval(data);
-    document.getElementById("resultBlock").textContent = result;
+    var storeData;
+    var data
+    data = document.getElementById("resultBlock").textContent;
+    console.log(data);
+    if(data.includes('^'))
+    {
+        var finalValue = data.split("^");
+        console.log(finalValue);
+        var expoValue = Math.pow(finalValue[0],finalValue[1]);
+        console.log(expoValue);
+        document.getElementById("resultBlock").textContent = expoValue;
+        storeData = data + "=" + expoValue;
+        document.getElementById("historyBlock").textContent = storeData;
+        localStorage.setItem(data,expoValue);
+    }
+    else
+    {
+        var result = eval(data);
+        document.getElementById("resultBlock").textContent = result;
+        storeData = data + "=" + result;
+        document.getElementById("historyBlock").textContent = storeData;
+        localStorage.setItem(data,result);
+    } 
 }
 
