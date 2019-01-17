@@ -25,7 +25,7 @@
         <button class="calcButton calcAction" data-value="ac" id="btn-all-clear" onclick="allClear()"> AC </button>
         <button class="calcButton calcAction" data-value="c" id="btn-single-digit-clear" onclick="deleteSingleDigit()">C </button>
         <button class="calcButton calcAction" data-value="xⁿ" id="btn-exponential"> xⁿ </button>
-        <button class="calcButton calcAction" data-value="=" id="btn-equals-to"> = </button>
+        <button class="calcButton calcAction" data-value="=" id="btn-equals-to" onclick="equalsTo()"> = </button>
 
         <!--Third Row-->
         <button class="calcButton calcAction" data-value="x³" id="btn-cube" onclick="countCube()"> x³ </button>
@@ -37,25 +37,25 @@
         <button class="calcButton" data-value="7" id="btn-seven" onclick="displayDigit('7')"> 7 </button>
         <button class="calcButton" data-value="8" id="btn-eight" onclick="displayDigit('8')"> 8 </button>
         <button class="calcButton" data-value="9" id="btn-nine" onclick="displayDigit('9')"> 9 </button>
-        <button class="calcButton calcAction" data-value="+" id="btn-plus"> + </button>
+        <button class="calcButton calcAction" data-value="+" id="btn-plus" onclick="displayDigit('+')"> + </button>
 
         <!--Fifth Row-->
         <button class="calcButton" data-value="4" id="btn-four" onclick="displayDigit('4')"> 4 </button>
         <button class="calcButton" data-value="5" id="btn-five" onclick="displayDigit('5')"> 5 </button>
         <button class="calcButton" data-value="6" id="btn-six" onclick="displayDigit('6')"> 6 </button>
-        <button class="calcButton calcAction" data-value="/" id="btn-divide"> / </button>
+        <button class="calcButton calcAction" data-value="/" id="btn-divide" onclick="displayDigit('/')"> / </button>
 
         <!--Sixth Row-->
         <button class="calcButton" value="1" id="btn-one" onclick="displayDigit('1')"> 1 </button>
         <button class="calcButton" data-value="2" id="btn-two" onclick="displayDigit('2')"> 2 </button>
         <button class="calcButton" data-value="3" id="btn-three" onclick="displayDigit('3')"> 3 </button>
-        <button class="calcButton calcAction" data-value="*" id="btn-multiply"> * </button>
+        <button class="calcButton calcAction" data-value="*" id="btn-multiply" onclick="displayDigit('*')"> * </button>
 
         <!--Seventh Row-->
         <button class="calcButton" data-value="0" id="btn-zero" onclick="displayDigit('0')"> 0 </button>
         <button class="calcButton" data-value="." id="btn-point" onclick="displayDigit('.');checkDecimal();"> . </button>
         <button class="calcButton" data-value="00" id="btn-doubleZero" onclick="displayDigit('00')"> 00 </button>
-        <button class="calcButton calcAction" data-value="-" id="btn-subtract">-</button>
+        <button class="calcButton calcAction" data-value="-" id="btn-subtract" onclick="displayDigit('-')">-</button>
 
     </div>
 <script type="text/javascript" src="main.js"></script>
