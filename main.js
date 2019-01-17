@@ -1,5 +1,6 @@
-
+//Declaration of variable
 var i=0;
+
 //Functions for Calculation Start
 
     //Function of Displaying Numbers and checking length
