@@ -1,4 +1,5 @@
-/* Calculator Style */
+/* Calculator Style Start */
+
 body {
     width: 100%;
     height: 100%;
@@ -7,17 +8,19 @@ body {
     background:#144e5a;
     font-family: arial, sans-serif;
   }
-  main {
+
+main {
     margin-top: 30px;
     overflow: auto;
     min-height: 600px;
     height: 100%;
-  }
-  main .calc {
+}
+
+main .calc {
     margin: 0 auto;
-  }
+}
   
-  .calc {
+.calc {
     position: relative;
     width: 320px;
     font-size: 0;
@@ -28,14 +31,15 @@ body {
     cursor: default;    
 }
   
-  .calcDisplay {
+.calcDisplay {
     height: 140px;
     width: 100%;
     background: #D5A458;
     color: #fff;
     text-align: right;
-  }
-  .calcResult {
+}
+
+.calcResult {
     box-sizing: border-box;
     width: 100%;
     height: 100px;
@@ -45,8 +49,9 @@ body {
     padding-right: 20px;
     padding-left: 50px;
     overflow: hidden;
-  }
-  .calcHistory {
+}
+  
+.calcHistory {
     box-sizing: border-box;
     height: 40px;
     line-height: 40px;
@@ -54,8 +59,9 @@ body {
     font-size: 15px;
     padding: 0 20px;
     overflow: hidden;
-  }
-  .calcCleaner {
+}
+  
+.calcCleaner {
     cursor: pointer;
     position: absolute;
     background: transparent;
@@ -68,8 +74,9 @@ body {
     width: 20px;
     opacity: 0;
     transition: all 0.1s;
-  }
-  .calcButton {
+}
+
+.calcButton {
     box-sizing: border-box;
     background: #0F2043;
     border: none;
@@ -82,8 +89,9 @@ body {
     font-size: 25px;
     cursor: pointer;
     transition: all 0.1s;
-  }
-  .calcHistoryButton {
+}
+
+.calcHistoryButton {
     box-sizing: border-box;
     background: #79CEDC;
     border: none;
@@ -96,26 +104,34 @@ body {
     font-size: 25px;
     cursor: pointer;
     transition: all 0.1s;
-  }
-  .calcButton:nth-of-type(4n) {
+}
+  
+.calcButton:nth-of-type(4n) {
     border: none;
-  }
-  .calcButton:hover {
+}
+
+.calcButton:hover {
     box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
     border: none;
-  }
-  .calcButton:focus {
+}
+
+.calcButton:focus {
     outline: 0;
     box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-  }
-  .calcButton:active {
-    box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
-  }
-  .calcAction {
-    background:#79CEDC;
-  }
+}
 
-/* Navigation Style */
+.calcButton:active {
+    box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+  
+.calcAction {
+    background:#79CEDC;
+}
+
+/* Calculator Style End */
+
+/* Navigation Style Start */
+
 .sidenav {
     min-height: 640px;
     width:440px;
@@ -129,9 +145,9 @@ body {
     overflow-y: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
+}
   
-  .sidenav a {
+.sidenav a {
     padding: 8px 8px 2px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -139,21 +155,23 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
+}
   
-  .sidenav a:hover {
+.sidenav a:hover {
     color: #f1f1f1;
-  }
+}
   
-  .sidenav .closebtn {
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 61px;
     font-size: 36px;
     margin-left: 50px;
-  }
+}
   
-  @media screen and (max-height: 450px) {
+@media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-  }
+}
+
+/* Navigation Style End */
