@@ -56,8 +56,14 @@
         <button class="calcButton" data-value="." id="btn-point" onclick="displayDigit('.');checkDecimal();"> . </button>
         <button class="calcButton" data-value="00" id="btn-doubleZero" onclick="displayDigit('00')"> 00 </button>
         <button class="calcButton calcAction" data-value="-" id="btn-subtract" onclick="displayDigit('-')">-</button>
+        <button class="calcHistoryButton calcAction" data-value="history" id="btn-history" onclick="openNav()">History</button>
 
+        <!--Navigation Menu-->
+        <div id="historyList" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">History</a>
+        </div>
     </div>
+    
 <script type="text/javascript" src="main.js"></script>
 </main>
 </html>
