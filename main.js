@@ -69,3 +69,10 @@ function checkDecimal(){
     }
 }
 
+//Functions of Add, Mul, Div, Subtract
+function equalsTo(){
+    var data = document.getElementById("resultBlock").textContent;
+    var result = eval(data);
+    document.getElementById("resultBlock").textContent = result;
+}
+
