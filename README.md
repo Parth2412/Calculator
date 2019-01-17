@@ -1,6 +1,6 @@
 # Javascript Calculator
 
-## Javascript Calculator Challanges
+## Javascript Calculator Challange
 
 	A calculator is divided into four phases which is basically based on our JIRA Tickets. So implementation of calculator will follow that order to deliver the final product:
 	
