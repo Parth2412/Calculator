@@ -235,7 +235,7 @@ var storeToHistory;
         var clearHistoryID = document.getElementById("clear-history");
         clearHistoryID.onclick = function(){
             localStorage.clear();
-            closeNav();
+            openNav();
         }
     }
     //Function for Close Navigation Bar
