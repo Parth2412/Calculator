@@ -1,6 +1,7 @@
 //Declaration of variable
 var i=0;
 var storeToHistory;
+
 //Functions for Calculation Start
 
     //Function of Displaying Numbers and checking length
@@ -28,9 +29,11 @@ var storeToHistory;
             var result = Math.pow(number,3);
             var display = document.getElementById("resultBlock");
             display.textContent = result;
-            var storeValue = number+"³"+" = "+result;
-            document.getElementById("historyBlock").textContent = storeValue;
-            localStorage.setItem(i++,storeValue);
+            var question = number+"³"+" = ";
+            var answer = result;
+            storeToHistory = {question,answer};
+            document.getElementById("historyBlock").textContent = number+"³"+" = "+result;
+            storeHistory();
         }
     }
 
@@ -43,9 +46,11 @@ var storeToHistory;
             var result = Math.pow(number,2);
             var display = document.getElementById("resultBlock");
             display.textContent = result;
-            var storeValue = number+"²"+" = "+result;
-            document.getElementById("historyBlock").textContent = storeValue;
-            localStorage.setItem(i++,storeValue);
+            var question = number+"²"+" = ";
+            var answer = result;
+            storeToHistory = {question,answer};
+            document.getElementById("historyBlock").textContent = number+"²"+" = "+result;
+            storeHistory();
         }
     }
 
@@ -58,8 +63,11 @@ var storeToHistory;
         else{
             var result = Math.sqrt(beforeValue);
             document.getElementById("resultBlock").textContent = result;
-            var storeValue = "√"+beforeValue+" = "+result;
-            localStorage.setItem(i++,storeValue);
+            var question = "√"+beforeValue+" = ";
+            var answer = result;
+            storeToHistory = {question, answer};
+            storeHistory();
+            document.getElementById("historyBlock").textContent = "√"+beforeValue+" = "+result;
         }
     }
 
@@ -81,9 +89,11 @@ var storeToHistory;
                 increment++;
             }
             document.getElementById("resultBlock").textContent = fact;
-            var storeValue = beforeValue+"! = "+fact;
-            document.getElementById("historyBlock").textContent = storeValue;
-            localStorage.setItem(i++,storeValue);
+            var question = beforeValue+"! = ";
+            var answer = fact;
+            storeToHistory = {question, answer};
+            document.getElementById("historyBlock").textContent = beforeValue+"! = "+fact;
+            storeHistory();
         }
     }
 
@@ -93,6 +103,7 @@ var storeToHistory;
         result = "";
         document.getElementById("resultBlock").textContent = result;
         document.getElementById("historyBlock").textContent = result;
+        window.location.reload();
     }
 
     //Function of Delete single digit
@@ -171,15 +182,19 @@ var storeToHistory;
                 var expoValue = Math.pow(finalValue[0],finalValue[1]);
                 console.log(expoValue);
                 document.getElementById("resultBlock").textContent = expoValue;
-                storeData = data + "=" + expoValue;
-                document.getElementById("historyBlock").textContent = storeData;
-                localStorage.setItem(i++,storeData);
+                var question = data + "=";
+                var answer = expoValue;
+                storeToHistory = {question, answer};
+                document.getElementById("historyBlock").textContent = data + "=" + expoValue;
+                storeHistory();
             }else{
                 var result = eval(data);
                 document.getElementById("resultBlock").textContent = result;
-                storeData = data + "=" + result;
-                document.getElementById("historyBlock").textContent = storeData;
-                localStorage.setItem(i++,storeData);
+                var question = data + "=";
+                var answer = result;
+                storeToHistory = {question,answer};
+                document.getElementById("historyBlock").textContent = data + "=" + result;
+                storeHistory();
             }
         } 
     }
@@ -187,7 +202,7 @@ var storeToHistory;
 //Functions for Calculation End
 
 
-//Functions for Navigation Start and display History
+//Functions for Navigation Start, Navigation End, Store History, Display History Start
 
     //Function for Open Navigation Bar and show History
     function openNav() {
@@ -196,22 +211,36 @@ var storeToHistory;
         while(historyList.children.length - 1){
             historyList.removeChild(historyList.lastChild);
         }
-        if(localStorage.length <= 10){
-            for(var hisLoop = 0 ; hisLoop <= localStorage.length - 1; hisLoop++){
-                var historyData = localStorage[hisLoop];
-                var showHistory = document.createElement('a');
-                showHistory.style.textAlign = "left";
-                showHistory.innerHTML = historyData;
-                historyList.appendChild(showHistory);
-            }
+        let historyDisplay = [];
+        historyDisplay = JSON.parse(localStorage.getItem('historyKeyValue'));
+        if(historyDisplay !== null){
+            let historyBlock = document.getElementById("historyList");
+            historyDisplay.forEach(element => {
+                let newA = document.createElement('a');
+                newA.textContent = (element.question+" "+element.answer);
+                historyBlock.appendChild(newA);
+            });
         }
     }
-    
     //Function for Close Navigation Bar
     function closeNav() {
         document.getElementById("historyList").style.width = "0";
     }
+    //Function for Store History
+    function storeHistory(){
+        let historyArray=[];
+        historyArray=JSON.parse(localStorage.getItem('historyKeyValue'));
+        // console.log(typeof abc);
+        if(historyArray == null)
+        {
+            historyArray=[];
+        }
+        if(Object.keys(historyArray).length>9)
+        {
+            historyArray.shift();  
+        }
+        historyArray.push(storeToHistory);
+        localStorage.setItem('historyKeyValue',JSON.stringify(historyArray));
+    }
 
-//Functions for Navigation End
-
-  
+//Functions for Navigation Start, Navigation End, Store History, Display History End
