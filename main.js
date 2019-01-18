@@ -1,6 +1,6 @@
 //Declaration of variable
 var i=0;
-
+var storeToHistory;
 //Functions for Calculation Start
 
     //Function of Displaying Numbers and checking length
@@ -161,22 +161,26 @@ var i=0;
         var storeData;
         var data
         data = document.getElementById("resultBlock").textContent;
-        console.log(data);
-        if(data.includes('^')){
-            var finalValue = data.split("^");
-            console.log(finalValue);
-            var expoValue = Math.pow(finalValue[0],finalValue[1]);
-            console.log(expoValue);
-            document.getElementById("resultBlock").textContent = expoValue;
-            storeData = data + "=" + expoValue;
-            document.getElementById("historyBlock").textContent = storeData;
-            localStorage.setItem(i++,storeData);
+        if(data[0] == null){
+            deleteSingleDigit();
         }else{
-            var result = eval(data);
-            document.getElementById("resultBlock").textContent = result;
-            storeData = data + "=" + result;
-            document.getElementById("historyBlock").textContent = storeData;
-            localStorage.setItem(i++,storeData);
+            console.log(data);
+            if(data.includes('^')){
+                var finalValue = data.split("^");
+                console.log(finalValue);
+                var expoValue = Math.pow(finalValue[0],finalValue[1]);
+                console.log(expoValue);
+                document.getElementById("resultBlock").textContent = expoValue;
+                storeData = data + "=" + expoValue;
+                document.getElementById("historyBlock").textContent = storeData;
+                localStorage.setItem(i++,storeData);
+            }else{
+                var result = eval(data);
+                document.getElementById("resultBlock").textContent = result;
+                storeData = data + "=" + result;
+                document.getElementById("historyBlock").textContent = storeData;
+                localStorage.setItem(i++,storeData);
+            }
         } 
     }
 
