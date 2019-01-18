@@ -142,15 +142,15 @@ main .calc {
     left: 0;
     background-color: #111 ;
     overflow-x: hidden;
-    overflow-y: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    overflow: hidden;
 }
   
 .sidenav a {
     padding: 8px 8px 2px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 17px;
     text-align: center;
     color: #818181;
     display: block;
@@ -164,6 +164,14 @@ main .calc {
 .sidenav .closebtn {
     position: absolute;
     top: 0;
+    right: 60px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav .clearHistorybtn {
+    position: absolute;
+    top: 350px;;
     right: 61px;
     font-size: 36px;
     margin-left: 50px;
