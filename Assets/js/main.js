@@ -6,13 +6,19 @@ var storeToHistory;
 
     //Function of Displaying Numbers and checking length
     function displayDigit(number){
-        console.log(number);
         var result = document.getElementById("resultBlock");
         result.textContent += number;
         if(result.textContent.startsWith('+') || result.textContent.startsWith('-') || 
             result.textContent.startsWith('/') || result.textContent.startsWith('*') ||
             result.textContent.startsWith('^')){
             allClear();
+        }
+        if(result.textContent.includes('+') || result.textContent.includes('-') || 
+            result.textContent.includes('/') || result.textContent.includes('*') ||
+            result.textContent.includes('^')){
+            var preValue = document.getElementById("resultBlock").textContent;
+            document.getElementById("historyBlock").textContent += preValue;
+            document.getElementById("resultBlock").textContent = "";
         }
         var len = result.textContent.length;
         if(len > 10){
@@ -170,8 +176,9 @@ var storeToHistory;
     //Functions of Add, Mul, Div, Subtract, Exponential
     function equalsTo(){
         var storeData;
-        var data
+        var data, valueToCalculate;
         data = document.getElementById("resultBlock").textContent;
+        valueToCalculate = document.getElementById("historyBlock").textContent+document.getElementById("resultBlock").textContent;
         if(data[0] == null){
             deleteSingleDigit();
         }else{
@@ -188,12 +195,12 @@ var storeToHistory;
                 document.getElementById("historyBlock").textContent = data + "=" + expoValue;
                 storeHistory();
             }else{
-                var result = eval(data);
+                var result = eval(valueToCalculate);
                 document.getElementById("resultBlock").textContent = result;
-                var question = data + "=";
+                var question = valueToCalculate + "=";
                 var answer = result;
                 storeToHistory = {question,answer};
-                document.getElementById("historyBlock").textContent = data + "=" + result;
+                document.getElementById("historyBlock").textContent = valueToCalculate + "=" + result;
                 storeHistory();
             }
         } 
@@ -220,6 +227,15 @@ var storeToHistory;
                 newA.textContent = (element.question+" "+element.answer);
                 historyBlock.appendChild(newA);
             });
+            let newLink = document.createElement('a');
+            newLink.textContent = "Clear History";
+            newLink.id = "clear-history";
+            historyBlock.appendChild(newLink);
+        }
+        var clearHistoryID = document.getElementById("clear-history");
+        clearHistoryID.onclick = function(){
+            localStorage.clear();
+            closeNav();
         }
     }
     //Function for Close Navigation Bar
